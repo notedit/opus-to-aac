@@ -1,0 +1,4 @@
+github.com/notedit/gst v0.0.5 h1:gnQn0T1IeQQ3oEIToQIwAgErO2TBHT00A9TsI13/ly4=
+github.com/notedit/gst v0.0.5/go.mod h1:99yZ0oIrCg0xd2a1rn/1cjcUAHLAGTDxXLD1FQ5NpoM=
+github.com/notedit/resample v0.0.3 h1:sNkypw+yQGt6RSCKapS+p5VAg6MAuvE1EbCqJytJjPw=
+github.com/notedit/resample v0.0.3/go.mod h1:Zk+DYg8q6kbJZQ3yAIVNCO6zCuTv7BcCtXJvXT+Fci4=
