@@ -4,6 +4,7 @@ import (
 	"fmt"
 	"github.com/notedit/gst"
 	"github.com/notedit/resample"
+	"sync"
 )
 
 var pipelineStr = "audiotestsrc wave=sine ! audio/x-raw, format=S16LE,rate=48000, channels=2 ! audioconvert  ! opusenc ! appsink name=sink"
@@ -136,6 +137,8 @@ func main() {
 	element := pipeline.GetByName("sink")
 	pipeline.SetState(gst.StatePlaying)
 
+	var lock sync.RWMutex
+
 	for {
 
 		sample, err := element.PullSample()
@@ -149,7 +152,10 @@ func main() {
 			}
 		}
 
+		lock.Lock()
 		_, err = trans.Do(sample.Data)
+		lock.Unlock()
+
 		if err != nil {
 			fmt.Println(err)
 		}
